@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+.modal-dialog {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal-content {
+  height: auto !important;
+  min-height: 100% !important;
+  border-radius: 0 !important;
+  background-color: #ececec !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  font-weight: 300;
+  box-shadow: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  background: rgba(255, 255, 255, 1);
+  height: 90px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+.navigation-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+  
 }
-
-.App-link {
-  color: #61dafb;
+.navigation-title {
+  font-size: 64px;
+  line-height: 100px;
+  color: #39803e;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .navigation-title {
+    font-size: 32px;
+    line-height: 70px;
   }
-  to {
-    transform: rotate(360deg);
+  .navigation-links {
+    text-align: center;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .navigation-title {
+    font-size: 32px;
+    line-height: 70px;
+  }
+  .navigation-links {
+    text-align: center;
+  }
+
+/* Landscape phones and down */
+  @media (max-width: 480px) {
+    .navigation-title {
+      font-size: 28px;
+      line-height: 45px;
+    }
+    .navigation-links {
+      text-align: center;
+    }
   }
 }
