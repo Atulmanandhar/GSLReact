@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import menu from "../assets/menu.png";
 import logo from "../assets/favicon.png";
-import NavigationOptions from './NavigationOptions';
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody } from "mdbreact";
+import NavigationOptions from "./NavigationOptions";
+import { MDBContainer, MDBModal, MDBModalBody } from "mdbreact";
+import {NavLink} from 'react-router-dom';
 
 export default class NavigationModal extends Component {
   state = {
@@ -14,6 +15,7 @@ export default class NavigationModal extends Component {
       modal: !this.state.modal
     });
   };
+ 
   render() {
     return (
       <div className="NavModal">
@@ -35,22 +37,24 @@ export default class NavigationModal extends Component {
           >
             <MDBModalBody>
               <div className="container">
-              <img
-                src={logo}
-                width="80"
-                height="80"
-                className="d-inline-block align-top"
-              />              
-              
+                <NavLink to="/home">
+                  <img
+                    src={logo}
+                    width="80"
+                    height="80"
+                    className="d-inline-block align-top"
+                    onClick={this.toggle}
+                  />
+                </NavLink>
+
                 <img
                   src="https://movon.com/wp-content/themes/ns-theme-child/assets/images/menu-close.svg"
                   height="50px"
                   width="100px"
                   onClick={this.toggle}
                 />
-                </div>
-            <NavigationOptions />
-             
+              </div>
+              <NavigationOptions closeClick={()=>this.toggle()}/>
             </MDBModalBody>
           </MDBModal>
         </MDBContainer>
